@@ -8,13 +8,7 @@ typedef struct Node
 } Node;
 
 Node* createNode(int data) ;
-void insert_atHead(Node **head, int data);
-void insert_atTail(Node *head, int data);
-Node* init() ; 
-void insert_given_Index(Node *node, int index, int data);
-void insert_given_Value(Node *node, int value, int data);
 int get_Length(Node *head);
-void delete_head(Node **head);
 
 
 Node* init(){
@@ -50,6 +44,7 @@ void insert_atTail(Node *node, int data){
     }
     node->next = new_node ;
     new_node->next = NULL ;
+
 }
 
 void printLinkedlist(Node *head){
@@ -108,34 +103,26 @@ void delete_given_Value(Node *node, int value){
     }
 
 }
-
 void delete_head(Node **head){
     Node *temp ;
-    if (head == NULL || *head == NULL) return ; 
-
     temp = *head;
     *head = (*head)->next;
-
     free(temp);
-
 }
 
 void delete_given_index(Node *node,int index){
     int i = 1 ;
     int len = get_Length(node);
+
     if (index > len){
         printf("chosen index out of range ");
         return ;
     }
-        
     while (node != NULL){
-        if (index == 1){
-            delete_head(&node);
-        }
         i++ ;
         if(i == index){
             Node *temp = node ;
-            temp = node->next ; 
+            temp = node->next ;
             node->next = node->next->next ;
             free(temp);
             break;
@@ -158,18 +145,29 @@ int main(int argc, char const *argv[])
 {
     Node *head = init();
 
+    // insert node at head 
     insert_atHead(&head, 777);
     insert_atHead(&head, 5);
     insert_atHead(&head, 1);
 
+    //insert node at tail
     insert_atTail(head,8888);
     insert_atTail(head,99999);
 
+    // insert node given index where to do so 
     insert_given_Index(head,2,66);    
+    // insert node after a pre existing value in linked list 
     insert_given_Value(head, 8888, 69);
 
-    delete_given_index(head, 1);
-    //delete_given_Value(head, 5);
+    printLinkedlist(head);
+    // delete node given index
+    delete_given_index(head, 8);
+    printLinkedlist(head);
+    // delete node given pre existing value  
+    delete_given_Value(head, 111);
+    // delete head of linked list 
+    delete_head(&head);
+
     printLinkedlist(head);
 
     free(head);

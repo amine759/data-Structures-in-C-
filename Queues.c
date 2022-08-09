@@ -16,11 +16,7 @@ typedef struct Queue {
 } Queue ; 
 
 
-Queue* init() ; 
 Element* createElement(int data);
-void enQueue(Queue *queue, int data);
-void deQueue(Queue *queue); 
-void printQueue(Queue *queue);
 
 Queue* init() {
     Queue *queue = malloc(sizeof(struct Queue));

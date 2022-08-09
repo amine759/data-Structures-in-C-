@@ -19,9 +19,7 @@ typedef struct Stack
 
 Stack* init() ; 
 Element* createElement(int data);
-void addElement(Stack *stack, int data);
-void deleteElement(Stack *stack); 
-void printStack(Stack *stack);
+
 
 
 Stack* init()

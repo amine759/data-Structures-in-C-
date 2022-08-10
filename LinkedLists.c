@@ -10,14 +10,6 @@ typedef struct Node
 Node* createNode(int data) ;
 int get_Length(Node *head);
 
-
-Node* init(){
-    Node *head = (Node*)malloc(sizeof(struct Node)) ;
-    head->data = 111 ;
-    head->next = NULL ;
-    return head ;
-}
-
 Node* createNode(int data){
     Node *node = malloc(sizeof(struct Node));
     node->data = data;
@@ -143,7 +135,7 @@ int get_Length(Node *head){
 
 int main(int argc, char const *argv[])
 {
-    Node *head = init();
+    Node *head = createNode(111);
 
     // insert node at head 
     insert_atHead(&head, 777);

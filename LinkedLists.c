@@ -93,7 +93,7 @@ void delete_given_Value(Node *node, int value){
 
     while (node->next != NULL){
         if(node->next->data == value ){
-            Node *temp = node ;     
+            Node *temp ;     
             temp = node->next ; 
             node->next = node->next->next ;
             free(temp);
@@ -121,7 +121,7 @@ void delete_given_index(Node *node,int index){
     while (node != NULL){
         i++ ;
         if(i == index){
-            Node *temp = node ;
+            Node *temp ;
             temp = node->next ;
             node->next = node->next->next ;
             free(temp);

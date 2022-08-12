@@ -19,14 +19,14 @@ typedef struct Queue {
 Element* createElement(int data);
 
 Queue* init() {
-    Queue *queue = malloc(sizeof(struct Queue));
+    Queue *queue = malloc(sizeof(Queue));
     queue->head = NULL ; 
     queue->tail = NULL ;
     return queue ;
 }
 
 Element* createElement(int data){
-    Element *new_element = (Element*)malloc(sizeof(struct Element));
+    Element *new_element = (Element*)malloc(sizeof(Element));
     new_element->data = data ; 
     new_element->next = NULL ; 
     return new_element ; 

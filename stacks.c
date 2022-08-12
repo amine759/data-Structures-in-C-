@@ -24,7 +24,7 @@ Element* createElement(int data);
 
 Stack* init()
 {
-    Stack *stack = malloc(sizeof(struct Stack)); // stack variable of type pointer points to a Stack
+    Stack *stack = malloc(sizeof(Stack)); // stack variable of type pointer points to a Stack
     stack->head = NULL;
     stack->size = 0;
     return stack;
@@ -32,7 +32,7 @@ Stack* init()
 
 Element* createElement(int data)
 {
-    Element *new_element = (Element*)malloc(sizeof(struct Element));
+    Element *new_element = (Element*)malloc(sizeof(Element));
 
     new_element->data = data;
     new_element->next = NULL;

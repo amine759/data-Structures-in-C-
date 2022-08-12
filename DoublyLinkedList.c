@@ -14,7 +14,7 @@ int get_Length(Node *head);
 
 
 Node* createNode(int data){
-    Node *node = malloc(sizeof(struct Node));
+    Node *node = malloc(sizeof(Node));
     node->data = data;
     node->next= NULL ;
     node->prev = NULL ;

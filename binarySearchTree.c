@@ -125,7 +125,7 @@ int main(int argc, char const *argv[])
     printf("\n%d found\n",rec_search->data);
     printf("\n**** iterative search *****\n");
     Node* iter_search = rec_Search(111,root);
-    printf("\n%d found\n",iter_search->data); 
+    printf("\n%d found\n",iter_search->data);
 
     printf("\n*** deletion ***\n");
     root = delete_Node(root, 10);

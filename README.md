@@ -1,1 +1,1 @@
-# data-Structures-in-C-
+# data structures implementation in C

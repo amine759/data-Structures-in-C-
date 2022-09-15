@@ -47,7 +47,7 @@ void printInorder_rec(struct Node* root)
 
 
 Node* iter_Search(int n, Node* root){
-    while (root != root)
+    while (root != NULL)
     {
         if(root->data == n) return root ;
         else if(n<root->data) root = root->left;
@@ -124,7 +124,7 @@ int main(int argc, char const *argv[])
     Node* rec_search = rec_Search(12,root);
     printf("\n%d found\n",rec_search->data);
     printf("\n**** iterative search *****\n");
-    Node* iter_search = rec_Search(111,root);
+    Node* iter_search = iter_Search(111,root);
     printf("\n%d found\n",iter_search->data);
 
     printf("\n*** deletion ***\n");
